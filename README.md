@@ -40,6 +40,8 @@ criterios de aceptación:
 
 ## Clonar el Repositorio, luego abrir en el terminal ejecutar el siguiente comando:
 
+* ***composer update***
+
 * ***php artisan migrate --seed***
 
 ## listo el backend va estar corriendo con las siguientes credeniales:
@@ -49,4 +51,44 @@ criterios de aceptación:
 
 #### nota: las rutas estan protegidas por autenticacion Bearer, para consultarlas debe usar el siguiente EndPoint
 
+http://localhost/test-backend/public/api/login
 
+## los EndPoint que puede probar son:
+
+* personas (GET)
+* personas/id (GET)
+* personas/id (PUT)
+* personas/id (POST)
+* personas/id (DELETE)
+
+* users (GET)
+* users/id (GET)
+* users/id (PUT)
+* users/id (POST)
+* users/id (DELETE)
+
+* clientes (GET)
+* clientes/id (GET)
+* clientes/id (PUT)
+* clientes/id (POST)
+* clientes/id (DELETE)
+
+* tipofacturaciones (GET)
+* tipofacturaciones/id (GET)
+
+* tipoidentificaciones (GET)
+* tipoidentificaciones/id (GET)
+
+* productos (GET)
+* productos/id (GET)
+* productos/id (PUT)
+* productos/id (POST)
+* productos/id (DELETE)
+
+* formulas (GET)
+* formulas/id (GET)
+* formulas/id (PUT)
+* formulas/id (POST)
+* formulas/id (DELETE)
+
+#### tiene el nivel de API debido que le falta manejos de errores, busquedas avansadas en los EndPoind solo con agregar ?search="lo que quieras buscar", al final de cada index EndPoind, rutas avanzadas, entre otros...
