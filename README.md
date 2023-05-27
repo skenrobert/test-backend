@@ -38,7 +38,9 @@ criterios de aceptación:
 
 * ***Composer version 2.5.5 2023-03-21 11:50:05***
 
-## Clonar el Repositorio, luego abrir en el terminal ejecutar el siguiente comando:
+## Clonar el Repositorio, luego abrir en el terminal ejecutar el siguiente comando (en la raiz):
+
+* ***composer update***
 
 * ***php artisan migrate --seed***
 
@@ -47,6 +49,46 @@ criterios de aceptación:
 * Usuario: kennyrmcali@gmail.com
 * Password: 12345678
 
-#### nota: las rutas estan protegidas por autenticacion Bearer, para consultarlas debe usar el siguiente EndPoint
+#### nota: las rutas estan protegidas por Autenticacion Bearer, para consultarlas debe usar el siguiente EndPoint (ejemplo: local) con las credenciales de arriba
 
+http://localhost/test-backend/public/api/login
 
+## los EndPoint que puede probar son (Autenticacion Bearer):
+
+* personas (GET)
+* personas/id (GET)
+* personas/id (PUT)
+* personas/id (POST)
+* personas/id (DELETE)
+
+* users (GET)
+* users/id (GET)
+* users/id (PUT)
+* users/id (POST)
+* users/id (DELETE)
+
+* clientes (GET)
+* clientes/id (GET)
+* clientes/id (PUT)
+* clientes/id (POST)
+* clientes/id (DELETE)
+
+* tipofacturaciones (GET)
+* tipofacturaciones/id (GET)
+
+* tipoidentificaciones (GET)
+* tipoidentificaciones/id (GET)
+
+* productos (GET)
+* productos/id (GET)
+* productos/id (PUT)
+* productos/id (POST)
+* productos/id (DELETE)
+
+* formulas (GET)
+* formulas/id (GET)
+* formulas/id (PUT)
+* formulas/id (POST)
+* formulas/id (DELETE)
+
+#### tiene el nivel de API debido que le falta manejos de errores, busquedas avansadas en los EndPoind solo con agregar ?search="lo que quieras buscar", al final de cada index EndPoind, rutas avanzadas, entre otros...
