@@ -49,7 +49,7 @@ criterios de aceptación:
 * Usuario: kennyrmcali@gmail.com
 * Password: 12345678
 
-#### nota: las rutas estan protegidas por autenticacion Bearer, para consultarlas debe usar el siguiente EndPoint
+#### nota: las rutas estan protegidas por autenticacion Bearer, para consultarlas debe usar el siguiente EndPoint (ejemplo: local) con las credenciales de arriba
 
 http://localhost/test-backend/public/api/login
 
