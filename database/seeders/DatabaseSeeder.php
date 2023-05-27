@@ -11,13 +11,15 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->truncateTable([
-            'users','clientes','personas','tipoidentificaciones'
+            'users','clientes','personas','tipoidentificaciones','productos','formulas',
         ]);
 
         $this->call(TipoidentificacioneSeeder::class);
         \App\Models\Persona::factory(20)->create();
         \App\Models\User::factory(1)->create();
        \App\Models\Cliente::factory(5)->create();
+       \App\Models\Producto::factory(20)->create();
+       \App\Models\Formula::factory(5)->create();
 
     }
 

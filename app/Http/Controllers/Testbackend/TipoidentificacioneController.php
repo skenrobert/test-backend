@@ -15,32 +15,9 @@ class TipoidentificacioneController extends ApiController
         return $this->showall($tipoidentificaciones);
     }
 
-    public function store(Request $request)
-    {
-        $tipoidentificacione = Tipoidentificacione::create($request->all());
-        return $this->showOne($tipoidentificacione, Response::HTTP_CREATED);
-    }
-
     public function show(Tipoidentificacione $tipoidentificacione)
     {
         return $this->showOne($tipoidentificacione);
     }
 
-    public function update(Request $request, Tipoidentificacione $tipoidentificacione)
-    {
-        $tipoidentificacione->fill($request->all());
-
-        if($tipoidentificacione->isClean()){
-            return $this->errorResponse('Debe Especificar al menos un valor diferente para actualizar', Response::HTTP_UNPROCESSABLE_ENTITY);
-        }
-
-        $tipoidentificacione->save();
-        return $this->showOne($tipoidentificacione);
-    }
-
-    public function destroy(Tipoidentificacione $tipoidentificacione)
-    {
-        $tipoidentificacione->delete($tipoidentificacione);
-        return $this->showOne($tipoidentificacione);
-    }
 }

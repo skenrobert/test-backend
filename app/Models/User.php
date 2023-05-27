@@ -59,4 +59,8 @@ class User extends Authenticatable
         return $this->belongsTo(Persona::class);
     }
 
+    public function formulas(){
+        return $this->hasMany(Formula::class);
+    }
+
 }

@@ -15,12 +15,9 @@ class Formula extends Model
             'pagocontado',
             'pagocredito',
             'consecutivodian',
-            'relacionempresa',
             'factura',
             'observacion',
-            'fechapagoservicio',
-            'eliminar',
-            'creador_id',
+            'user_id',
             'tipo_facturacione_id'
     ];
 
@@ -34,5 +31,9 @@ class Formula extends Model
 
     public function factulinea(){
         return $this->hasOne(Factulinea::class);
+    }
+
+    public function users(){
+        return $this->belongsTo(User::class);
     }
 }

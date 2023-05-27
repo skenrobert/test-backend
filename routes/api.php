@@ -16,10 +16,8 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/datauser', [AuthController::class, 'dataUser'])->middleware('auth:sanctum');
-
 
 Route::middleware(['auth:sanctum'])->group(function(){
     
@@ -32,7 +30,7 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::ApiResource('factulineas', 'App\Http\Controllers\Testbackend\FactulineaController');
     Route::ApiResource('formulas', 'App\Http\Controllers\Testbackend\FormulaController');
     Route::ApiResource('productos', 'App\Http\Controllers\Testbackend\ProductoController');
-    Route::ApiResource('tipofacturaciones', 'App\Http\Controllers\Testbackend\TipoFacturacioneController');
-    Route::ApiResource('tipoidentificaciones', 'App\Http\Controllers\Testbackend\TipoidentificacioneController');
+    Route::ApiResource('tipofacturaciones', 'App\Http\Controllers\Testbackend\TipoFacturacioneController', ['only'=> ['index','show']]);
+    Route::ApiResource('tipoidentificaciones', 'App\Http\Controllers\Testbackend\TipoidentificacioneController', ['only'=> ['index','show']]);
 });
 

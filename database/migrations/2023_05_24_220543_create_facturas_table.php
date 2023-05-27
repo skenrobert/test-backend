@@ -24,12 +24,8 @@ class CreateFacturasTable extends Migration
             $table->string('pagocontado');
             $table->string('pagocredito');
             $table->string('consecutivodian');
-            $table->integer('relacionempresa');
             $table->integer('factura');
             $table->text('observacion');
-            $table->date('fechapagoservicio');
-            $table->integer('eliminar');
-            $table->bigInteger('creador_id')->nullable();
 
             $table->unsignedBigInteger('tipo_facturacione_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
