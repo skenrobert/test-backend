@@ -18,11 +18,6 @@ class UserController extends ApiController
         $usuarios = User::all();
         return $this->showAll($usuarios);
 
-        // $usuarios = User::paginate(5);
-        // $custom = collect(['my_data' => 'My custom data here']);
-        // $data = $custom->merge($usuarios);
-        // return response()->json($data,200);
-
     }
 
     public function store(UserRequest $request){
@@ -34,8 +29,6 @@ class UserController extends ApiController
             $file = $request->file('imagen');
             $name = 'user'.time().'.webp';
             $path = public_path('images/img_api/users/'.$name);
-            // $path = public_path() . '\images\img_api\users\'.$name;
-            // $file->move($path, $name);
 
             $imgFile = Image::make($file->getRealPath())->encode('webp');
 
@@ -43,7 +36,6 @@ class UserController extends ApiController
                 $constraint->aspectRatio();
             })->fit(200, 200)->save($path);
 
-            // return $imgFile->response();
             $user->imagen = $name;
         }
 
@@ -59,22 +51,12 @@ class UserController extends ApiController
 
 
    public function show(User $user){
-        $user->tercero;
-        $user->empresa->decimale;
-        $user->perfile;
+        $user->persona;
         return $this->showOne($user);
     }
 
     public function update(UserRequest $request, User $user)
     {
-        // if($user->isDirty()){
-        //     return response()->json(['error' => 'Se debe especificar al menos un valor diferente para actualizar',
-        //      'code' => 422], 422);
-        // }
-
-            // return response()->json('email:'.$request->has('email'));//TODO: formData 
-            // return response()->json('email:'.$request->email);
-
 
         if($request->has('password')){
               $user->password = bcrypt($request->password);
@@ -84,24 +66,11 @@ class UserController extends ApiController
             $user->email = $request->email;
         }
          
-        if($request->has('perfile_id')){
-            $user->perfile_id = $request->perfile_id;
-        }
-
-        if($request->has('tercero_id')){
-            $user->tercero_id = $request->tercero_id;
-        }
-
         if ($request->file('imagen')) {
-            // $imagen_path = public_path().'/images/img_api/users/'.$user->imagen;
-            //$imagen_path = public_path().'\images\img_api\users\''.$user->imagen;
-            //unlink($imagen_path); //TODO: elimina la foto vieja pero debe ser provado en el servidor ya que arregla las carpetas segun el sistema operativo buscar alternativa
 
             $file = $request->file('imagen');
             $name = 'user'.time().'.webp';
             $path = public_path('images/img_api/users/'.$name);
-            // $path = public_path() . '\images\img_api\users\'.$name;
-            // $file->move($path, $name);
 
             $imgFile = Image::make($file->getRealPath())->encode('webp');
 
@@ -109,7 +78,6 @@ class UserController extends ApiController
                 $constraint->aspectRatio();
             })->fit(200, 200)->save($path);
 
-            // return $imgFile->response();
             $user->imagen = $name;
             }
 
@@ -127,11 +95,10 @@ class UserController extends ApiController
         return $this->showOne($user);
     }
 
-    public function estatus(User $user) //TODO: NO DEJAR LOGEAR SI ESTA EN FALSE
+    public function estatus(User $user) 
     {
         $user->estatus = $user->estatus ? false : true;
         $user->update();
-        $user->tercero;
         return $this->showOne($user);
     }
 }

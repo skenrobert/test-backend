@@ -23,6 +23,7 @@ class PersonaController extends ApiController
 
     public function show(Persona $persona)
     {
+        $persona->tipoidentificacione;
         return $this->showOne($persona);
     }
 
