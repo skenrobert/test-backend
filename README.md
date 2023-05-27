@@ -38,7 +38,7 @@ criterios de aceptación:
 
 * ***Composer version 2.5.5 2023-03-21 11:50:05***
 
-## Clonar el Repositorio, luego abrir en el terminal ejecutar el siguiente comando:
+## Clonar el Repositorio, luego abrir en el terminal ejecutar el siguiente comando (en la raiz):
 
 * ***composer update***
 
