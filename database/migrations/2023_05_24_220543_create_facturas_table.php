@@ -32,8 +32,10 @@ class CreateFacturasTable extends Migration
             $table->bigInteger('creador_id')->nullable();
 
             $table->unsignedBigInteger('tipo_facturacione_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
 
             $table->foreign('tipo_facturacione_id')->references('id')->on('tipo_facturaciones')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->softDeletes();
             $table->timestamps();
